@@ -1,0 +1,23 @@
+
+{
+  "extends": ["react-app"],
+  "env": {
+    "browser": true,
+    "es6": true,
+    "webextensions": true
+  },
+  "globals": {
+    "chrome": "readonly"
+  },
+  "overrides": [
+    {
+      "files": ["chrome-extension/**/*.js"],
+      "env": {
+        "webextensions": true
+      },
+      "globals": {
+        "chrome": "readonly"
+      }
+    }
+  ]
+}
