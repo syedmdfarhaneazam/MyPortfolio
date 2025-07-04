@@ -33,22 +33,19 @@ const Header = () => {
     try {
       // Create a link element
       const link = document.createElement("a");
-      link.href = "/resume.pdf";
-      link.download = "AZAM_Resume.pdf"; // This will be the downloaded file name
+      link.href = "/SyedMdFarhanEAzam.pdf";
+      link.download = "SyedMdFarhanEAzam.pdf";
       link.target = "_blank";
 
-      // Append to body, click, and remove
       document.body.appendChild(link);
       link.click();
       document.body.removeChild(link);
 
-      // Show success toast
       toast({
         title: "📄 Resume Downloaded!",
         description: "Thanks for downloading my resume. Let's connect!",
       });
     } catch (error) {
-      // Show error toast if download fails
       toast({
         title: "❌ Download Failed",
         description:
@@ -99,7 +96,6 @@ const Header = () => {
             AZAM
           </Link>
 
-          {/* Desktop Navigation */}
           <nav className="hidden lg:flex items-center gap-1">
             {navLinks.map((link) => (
               <NavLink
@@ -116,7 +112,6 @@ const Header = () => {
             ))}
           </nav>
 
-          {/* Desktop Controls */}
           <div className="hidden sm:flex items-center gap-2">
             <div className="flex items-center gap-1 p-1 rounded-full bg-secondary/50">
               {weatherOptions.map((opt) => (
