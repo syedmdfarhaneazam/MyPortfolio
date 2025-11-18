@@ -58,6 +58,7 @@ const Header = () => {
   const navLinks = [
     { name: "Home", path: "/" },
     { name: "Projects", path: "/projects" },
+    { name: "Experience", path: "/experience" },
     { name: "Skills", path: "/skills" },
     { name: "Vision", path: "/vision" },
     { name: "Magics", path: "/magics" },
@@ -93,7 +94,7 @@ const Header = () => {
             className="text-lg sm:text-xl font-bold text-primary text-glow pl-2"
             onClick={closeMobileMenu}
           >
-            AZAM
+            FARHAN
           </Link>
 
           <nav className="hidden lg:flex items-center gap-1">

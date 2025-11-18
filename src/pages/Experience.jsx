@@ -1,142 +1,53 @@
 import PageWrapper from "@/components/PageWrapper";
 import AnimatedText from "@/components/AnimatedText";
 import { motion } from "framer-motion";
-import {
-  BrainCircuit,
-  Code,
-  Database,
-  Server,
-  Terminal,
-  BarChart3,
-  Brain,
-  MessageSquare,
-  Wand2,
-  Check,
-} from "lucide-react";
+import { Briefcase, Check } from "lucide-react";
 
-const progressPoints = [
+const experiences = [
   {
-    title: "Frontend Mastery",
-    icon: Code,
-    pointers: [
-      "ReactJs",
-      "NextJs",
-      "Redux",
-      "PWA",
-      "Tailwind",
-      "Framer Motion",
-      "GSAP",
-      "Matter.js",
-    ],
+    title: "FULL STACK INTERN @ noCnxTechnologies",
+    duration: "05/2025 - 09/2025",
+    location: "Pune, India",
     isDone: true,
-  },
-  {
-    title: "Backend Development",
-    icon: Server,
-    pointers: ["FastApi", "Restful APIs", "WebSockets"],
-    isDone: true,
-  },
-  {
-    title: "Database Management",
-    icon: Database,
-    pointers: ["SQL", "PostgreSQL", "IndexedDB", "Mongodb"],
-    isDone: true,
-  },
-  {
-    title: "DevOps Fundamentals",
-    icon: Terminal,
+    icon: Briefcase,
     pointers: [
-      "Git",
-      "GitHub",
-      "Docker",
-      "Jenkins (In Progress)",
-      "Compile (In Progress)",
-      "Unit Testing (In Progress)",
-      "Build Pipeline (In Progress)",
-      "GitHub Tool Configuration (In Progress)",
-      "Terraform (In Progress)",
-      "Grafana (In Progress)",
+      "Developing full-stack web applications using React, Node.js, Express, and MongoDB.",
+      "Designed responsive UIs using Tailwind CSS and React Router.",
+      "Managed state efficiently with Redux Toolkit.",
+      "Wrote clean, modular code aligned with industry standards.",
+      "Selected in a Generative AI and LLM learning program to expand technical expertise.",
     ],
-    isDone: false,
   },
   {
-    title: "Basic Data Analytics",
-    icon: BarChart3,
-    pointers: [
-      "Pandas",
-      "NumPy",
-      "Matplotlib",
-      "Seaborn",
-      "Data Visualization",
-      "Statistical Analysis",
-    ],
+    title: "FULL STACK INTERN @ TheVectorX",
+    duration: "09/2025 - Present",
+    location: "Remote",
     isDone: false,
-  },
-  {
-    title: "Machine Learning",
-    icon: Brain,
+    icon: Briefcase,
     pointers: [
-      "Supervised Learning",
-      "Unsupervised Learning",
-      "Scikit-learn",
-      "Regression",
-      "Classification",
-      "Clustering",
+      "Create components for long-term maintainability.",
+      "Migrating Flutter code in Dart to React + JavaScript.",
+      "Optimize cross-device UI performance.",
+      "Integrate frontend with FastAPI endpoints.",
+      "Role-based authentication system for different flows.",
+      "Build Backend API using FastAPI and PostgreSQL.",
+      "Expanding my skills on Google Cloud Platform.",
     ],
-    isDone: false,
-  },
-  {
-    title: "Deep Learning",
-    icon: BrainCircuit,
-    pointers: [
-      "Neural Networks",
-      "TensorFlow",
-      "PyTorch",
-      "CNNs",
-      "RNNs",
-      "Transfer Learning",
-    ],
-    isDone: false,
-  },
-  {
-    title: "Natural Language Processing",
-    icon: MessageSquare,
-    pointers: [
-      "Tokenization",
-      "spaCy",
-      "NLTK",
-      "Transformers",
-      "BERT",
-      "Sentiment Analysis",
-    ],
-    isDone: false,
-  },
-  {
-    title: "Generative AI",
-    icon: Wand2,
-    pointers: [
-      "GANs",
-      "Diffusion Models",
-      "LLMs",
-      "Prompt Engineering",
-      "Fine-tuning",
-    ],
-    isDone: false,
   },
 ];
 
-const Vision = () => {
+const Experience = () => {
   return (
-    <PageWrapper title="Vision" description="My progress and future goals.">
+    <PageWrapper title="Experience" description="My professional journey.">
       <AnimatedText
-        text="Progress & Vision"
+        text="Experience Timeline"
         as="h1"
         className="text-4xl sm:text-5xl font-bold text-center mb-4 text-glow"
       />
 
       <p className="text-center text-base sm:text-lg text-foreground/70 mb-12 sm:mb-16 max-w-3xl mx-auto px-4">
-        Tracking my technical journey: achievements in green with ticks, and
-        aspirations in purple. A clean left-aligned timeline.
+        A timeline of my professional experience — completed roles in green and
+        ongoing roles in purple.
       </p>
 
       <div className="relative max-w-4xl mx-auto pl-10 sm:pl-20">
@@ -150,7 +61,7 @@ const Vision = () => {
         />
 
         <div className="space-y-16">
-          {progressPoints.map((point, index) => (
+          {experiences.map((exp, index) => (
             <motion.div
               key={index}
               className="relative flex gap-6"
@@ -163,27 +74,25 @@ const Vision = () => {
                 delay: index * 0.1,
               }}
             >
-              {/* Icon on the timeline */}
+              {/* Icon */}
               <div className="relative flex flex-col items-center">
                 <div
                   className={`relative p-3 rounded-full border-2 shadow-md transition-all duration-300 ${
-                    point.isDone
+                    exp.isDone
                       ? "bg-green-50 border-green-400 hover:bg-green-100"
                       : "bg-purple-50/10 border-purple-400/40 hover:bg-purple-100/10"
                   }`}
                 >
-                  <point.icon
+                  <exp.icon
                     className={`w-6 h-6 ${
-                      point.isDone ? "text-green-600" : "text-purple-500"
+                      exp.isDone ? "text-green-600" : "text-purple-500"
                     }`}
                   />
-
-                  {point.isDone && (
+                  {exp.isDone && (
                     <Check className="absolute -top-1 -right-1 w-4 h-4 text-green-500 bg-background rounded-full shadow-sm border" />
                   )}
                 </div>
-
-                {!point.isDone && (
+                {!exp.isDone && (
                   <motion.div
                     className="mt-2 w-2 h-2 bg-purple-500 rounded-full shadow-sm"
                     animate={{ scale: [1, 1.3, 1] }}
@@ -196,26 +105,25 @@ const Vision = () => {
                 )}
               </div>
 
-              {/* Text */}
+              {/* Text Block */}
               <div className="flex-1">
                 <h2
-                  className={`text-2xl sm:text-3xl font-bold mb-2 ${
-                    point.isDone ? "text-green-400" : "text-purple-400"
+                  className={`text-2xl sm:text-3xl font-bold mb-1 ${
+                    exp.isDone ? "text-green-400" : "text-purple-400"
                   }`}
                 >
-                  {point.title}
+                  {exp.title}
                 </h2>
 
-                <p
-                  className={`text-sm font-medium mb-4 ${
-                    point.isDone ? "text-green-600" : "text-purple-500"
-                  }`}
-                >
-                  {point.isDone ? "Achieved ✓" : "In Progress..."}
+                <p className="text-sm text-foreground/70 mb-1">
+                  {exp.duration}
+                </p>
+                <p className="text-sm text-foreground/70 mb-4">
+                  {exp.location}
                 </p>
 
                 <ul className="space-y-2">
-                  {point.pointers.map((p, i) => (
+                  {exp.pointers.map((p, i) => (
                     <motion.li
                       key={i}
                       className="flex items-center gap-3 text-base sm:text-lg text-foreground/80"
@@ -225,7 +133,7 @@ const Vision = () => {
                     >
                       <span
                         className={`w-2.5 h-2.5 rounded-full ${
-                          point.isDone ? "bg-green-400" : "bg-purple-500"
+                          exp.isDone ? "bg-green-400" : "bg-purple-500"
                         }`}
                       />
                       {p}
@@ -241,4 +149,4 @@ const Vision = () => {
   );
 };
 
-export default Vision;
+export default Experience;

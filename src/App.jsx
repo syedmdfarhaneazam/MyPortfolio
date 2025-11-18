@@ -1,16 +1,16 @@
-import React from 'react';
-import { Routes, Route, useLocation } from 'react-router-dom';
-import { AnimatePresence } from 'framer-motion';
-import Header from '@/components/layout/Header';
-import Footer from '@/components/layout/Footer';
-import WeatherOverlay from '@/components/layout/WeatherOverlay';
-import Home from '@/pages/Home';
-import Projects from '@/pages/Projects';
-import Skills from '@/pages/Skills';
-import Vision from '@/pages/Vision';
-import Contact from '@/pages/Contact';
-import Magics from '@/pages/Magics';
-import { Toaster } from '@/components/ui/toaster';
+import { Routes, Route, useLocation } from "react-router-dom";
+import { AnimatePresence } from "framer-motion";
+import Header from "@/components/layout/Header";
+import Footer from "@/components/layout/Footer";
+import WeatherOverlay from "@/components/layout/WeatherOverlay";
+import Home from "@/pages/Home";
+import Projects from "@/pages/Projects";
+import Skills from "@/pages/Skills";
+import Vision from "@/pages/Vision";
+import Contact from "@/pages/Contact";
+import Magics from "@/pages/Magics";
+import { Toaster } from "@/components/ui/toaster";
+import Experience from "./pages/Experience";
 
 function App() {
   const location = useLocation();
@@ -28,6 +28,7 @@ function App() {
             <Route path="/vision" element={<Vision />} />
             <Route path="/contact" element={<Contact />} />
             <Route path="/magics" element={<Magics />} />
+            <Route path="/experience" element={<Experience />} />
           </Routes>
         </AnimatePresence>
       </main>
@@ -38,3 +39,4 @@ function App() {
 }
 
 export default App;
+

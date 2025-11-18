@@ -89,6 +89,23 @@ const projectsData = {
   ],
   python: [
     {
+      title: "Topic & Question Generator",
+      description:
+        "Using FastAPI, spaCy, and KeyBERT for topic and question generation using the all-MiniLM-L6-v2 transformer model. Focused on speed, and minimal resource usage with compact NLP models.",
+      pros: [
+        "ML-powered topic extraction",
+        "Question generation",
+        "FastAPI for scalablity",
+        "Efficient and compact NLP",
+      ],
+      future: [
+        "Integrate advanced models",
+        "Fine-tune for engineering preparation",
+      ],
+      git: "https://github.com/syedmdfarhaneazam/QuestionsAndTopicGenerator",
+      live: "https://github.com/syedmdfarhaneazam/QuestionsAndTopicGenerator",
+    },
+    {
       title: "Snake Game",
       description: "A app using Tkinter for basic python Game.",
       pros: ["Easy To Use", "For learning", "Starters"],
@@ -233,12 +250,19 @@ const Projects = () => {
         </a>
       </div>
 
+      <ProjectSection title="Python / FastApi" projects={projectsData.python} />
+      <div className="text-center my-8 sm:my-12">
+        <a
+          href="https://github.com/syedmdfarhaneazam/"
+          target="_blank"
+          rel="noreferrer"
+        >
+          <motion.button whileHover={{ scale: 1.05 }} className="btn-primary">
+            And More...
+          </motion.button>
+        </a>
+      </div>
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-4 sm:gap-6">
-        <ProjectSection
-          title="Python"
-          projects={projectsData.python}
-          singleColumn
-        />
         <ProjectSection
           title="Shell Scripting"
           projects={projectsData.shell}
